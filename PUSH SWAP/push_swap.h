@@ -6,7 +6,7 @@
 /*   By: giomastr <giomastr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 14:25:05 by giomastr          #+#    #+#             */
-/*   Updated: 2025/03/06 15:40:27 by giomastr         ###   ########.fr       */
+/*   Updated: 2025/05/13 16:40:27 by giomastr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_list
 	int data;
 	struct s_list *previous;
 	struct s_list *next;
-} 
+}
 t_list;
 
 //******************************/
@@ -52,6 +52,13 @@ void	swap_a(t_list **stack_a);
 void	swap_b(t_list **stack_b);
 
 //******************************/
+//**    sorting functions    **/
+//****************************/
+
+int		sorted(t_list *stack);
+int		sort_three(t_list **stack);
+
+//******************************/
 //**     list functions      **/
 //****************************/
 
@@ -68,6 +75,11 @@ t_list	*ft_lstadd_back(t_list **head, t_list *new);
 t_list	ft_lst_bf_last(t_list *lst);
 t_list	*get_val(t_list *stack, int value);
 t_list	*get_min(t_list *stack);
-int		sorted(t_list *stack);
+
+void	free_mat(char **str);
+void	free_stack(t_list *stack);
+
+// main file
+t_list	*parse_mklist(int argc, char *argv[]);
 
 #endif
